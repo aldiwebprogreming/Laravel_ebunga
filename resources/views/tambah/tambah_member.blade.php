@@ -29,7 +29,7 @@
                           <div class="mb-3">
                               <label for="" class="form-label">Usernme</label>
                               <input type="text" class="form-control" name="username"  placeholder="Masukan username anda" required="" >
-                                <?php echo form_error('username',' <small class="text-danger pl-2">','</small>'); ?>
+                              
                             </div>
 
 
@@ -37,14 +37,13 @@
                             <div class="mb-3">
                               <label for="" class="form-label">Full Name</label>
                               <input type="text" class="form-control" name="full_name"  placeholder="Masukan full name" required="" >
-                                <?php echo form_error('full_name',' <small class="text-danger pl-2">','</small>'); ?>
-                            </div>
+                              
 
                             <div class="mb-3">
                               <label for="" class="form-label">Email</label>
                               <input type="email" class="form-control" name="email"  placeholder="Masukan email" required="">
 
-                               <?php echo form_error('email',' <small class="text-danger pl-2">','</small>'); ?>
+                            
                                
                             </div>
 
@@ -52,7 +51,7 @@
                             <div class="mb-3">
                               <label for="" class="form-label">Number Phone</label>
                               <input type="number" name="phone" class="form-control" minlength="11" maxlength="13" placeholder="Masukan nomor phone" required="">
-                               <?php echo form_error('phone',' <small class="text-danger pl-2">','</small>'); ?>
+                              
                             </div>
 
                              <div class="mb-3">
@@ -64,7 +63,7 @@
                                     foreach ($country as $data) {
                                  ?>
 
-                                 <option value="<?= $data['id'] ?>"><?= $data['name_country'] ?></option>
+                                 <option value="<?= $data->id ?>"><?= $data->name_country ?></option>
                                <?php } ?>
                               </select>
                             </div>
@@ -77,8 +76,8 @@
                               <label for="" class="form-label">Provinsi</label>
                              <select id="prov" class="form-control" name="provinsi">
                                <option>--Pilih Provinsi--</option>
-                               <?php foreach ($provinsi as $data) { ?>
-                                <option value="<?= $data['id_prov'] ?>"><?= $data['nama'] ?></option>
+                               <?php foreach ($prov as $data) { ?>
+                                <option value="<?= $data->id_prov ?>"><?= $data->nama ?></option>
                               <?php } ?>
                              </select>
                                
@@ -115,28 +114,28 @@
                               <div class="mb-3">
                               <label for="" class="form-label">Postal Code</label>
                                   <input type="number" name="postal_code" class="form-control" placeholder="Masukan postal code"  required="">  
-                                   <?php echo form_error('postal_code',' <small class="text-danger pl-2">','</small>'); ?>                          
+                                                   
                               </div>
 
                              <div class="mb-3">
                               <label for="" class="form-label">Alamat</label>
                                 <textarea class="form-control" placeholder="Masuakan alamat sekarang" style="height: 50px;" name="alamat"  required=""></textarea>
-                                 <?php echo form_error('alamat',' <small class="text-danger pl-2">','</small>'); ?>
+                                
                             </div>
 
                                <div class="mb-3">
                               <label for="" class="form-label">Ktp</label>
-                                  <input type="number" name="ktp" class="form-control" placeholder="Masuakan nomor ktp"  required="">     <?php echo form_error('ktp',' <small class="text-danger pl-2">','</small>'); ?>                       
+                                  <input type="number" name="ktp" class="form-control" placeholder="Masuakan nomor ktp"  required="">                           
                               </div>
 
                                  <div class="mb-3">
                               <label for="" class="form-label">NPWP</label>
-                                  <input type="number" name="npwp" class="form-control" placeholder="Masukan nomor npwp"  required="">    <?php echo form_error('npwp',' <small class="text-danger pl-2">','</small>'); ?>                         
+                                  <input type="number" name="npwp" class="form-control" placeholder="Masukan nomor npwp"  required="">                            
                               </div>
 
                                  <div class="mb-3">
                               <label for="" class="form-label">Siup</label>
-                                  <input type="text" name="siup" class="form-control" placeholder="Masukan nomor siup"  required="">   <?php echo form_error('siup',' <small class="text-danger pl-2">','</small>'); ?>                          
+                                  <input type="text" name="siup" class="form-control" placeholder="Masukan nomor siup"  required="">  
                               </div>
 
                          <!-- <div class="mb-3">
@@ -147,7 +146,7 @@
                                 <div class="mb-3">
                               <label for="" class="form-label">Suspend</label>
                                   <input type="number" name="suspend" class="form-control"  required="" placeholder="Masukan suspend">
-                                 <?php echo form_error('suspend',' <small class="text-danger pl-2">','</small>'); ?>                            
+                                                   
                               </div>
 
                         

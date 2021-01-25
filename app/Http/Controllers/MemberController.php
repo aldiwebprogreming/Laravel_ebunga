@@ -28,7 +28,10 @@ class MemberController extends Controller
      */
     public function create()
     {
-        //
+
+        $country = DB::table('tbl_country_support')->get();
+        $prov = DB::table('tbl_provinsi')->get();
+       return view('tambah.tambah_member',['country'=>$country,'prov'=>$prov]);
     }
 
     /**
