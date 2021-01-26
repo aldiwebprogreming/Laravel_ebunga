@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Bseller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class BsellerController extends Controller
 {
@@ -160,4 +161,17 @@ class BsellerController extends Controller
         return redirect('/bseller')->with('status','Branch seller berhasil di disable');
 
     }
+
+
+    function cetak_pdf(){
+
+        $bseller = Bseller::all();
+        $pdf = PDF::loadview('cetak_bseller',['bseller'=>$bseller]);
+
+       $data = json_encode($bseller);
+        
+      echo $data->alamat;
+        
+}
+
 }

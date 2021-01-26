@@ -27,6 +27,8 @@
                 <div class="card-body">
                 <a href="{{url('')}}/branch/tambah" class="btn btn-primary mb-3">Tambah Branch Seller</a>
 
+                 <a href="{{url('')}}/branch/pdf" class="btn btn-danger mb-3"><i class="fas fa-print"></i> Cetak PDF</a>
+
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>

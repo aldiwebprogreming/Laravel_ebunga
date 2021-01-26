@@ -120,6 +120,7 @@ Route::get('/bseller/{bseller}','BsellerController@show');
 Route::delete('/bseller/{bseller}','BsellerController@destroy');
 Route::post('/bseller/{bseller}/disable','BsellerController@disable');
 Route::post('/bseller/{bseller}/active','BsellerController@active');
+Route::get('/branch/pdf','BsellerController@cetak_pdf');
 
 //variant produk
 Route::get('/variant','variantController@index');
