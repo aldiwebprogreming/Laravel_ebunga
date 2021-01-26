@@ -6,7 +6,7 @@
  <div class="main-content">
         <section class="section">
           <div class="section-header">
-            <h1>Data Registrasi User</h1>
+            <h1>Data Registrasi Member</h1>
           </div>
           
 
@@ -15,7 +15,7 @@
              <div class="col-12 col-md-12 col-lg-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4>Data Registrasi User</h4>
+                    <h4>Data Registrasi Member</h4>
  				 </div>
 
  				 @if (session('status'))
@@ -25,7 +25,7 @@
 				@endif
 
                 <div class="card-body">
-            	<!-- <a href="{{url('tambah/customer')}}" class="btn btn-primary mb-3">Tambah Data Customer</a> -->
+            	<a href="{{url('tambah/regitrasi')}}" class="btn btn-primary mb-3">Tambah Registrasi</a>
 
                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

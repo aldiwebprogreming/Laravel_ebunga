@@ -37,13 +37,15 @@ Route::get('/oprator/{oprator}/edit','OpratorController@edit');
 Route::post('/oprator/{oprator}/update','OpratorController@update');
 
 
-// cusomer registrasi user
+// registrasi user
 Route::get('/regisuser','RegisuserController@index');
 Route::get('/regisuser/{regisuser}','RegisuserController@show');
 Route::post('/oprator/tambah/store','OpratorController@store');
 Route::delete('/regisuser/{regisuser}','RegisuserController@destroy');
 Route::get('/regisuser/{regisuser}/edit','RegisuserController@edit');
 Route::post('/regisuser/{regisuser}/update','RegisuserController@update');
+Route::get('/tambah/regitrasi','RegisuserController@create');
+Route::post('/registrasi/tambah/store','RegisuserController@store');
 
 
 
@@ -85,12 +87,14 @@ Route::post('/kategori/tambah/store','KategoriProdukController@store');
 Route::delete('/kategori/{kproduk}','KategoriProdukController@destroy');
 Route::post('/kategori/{kproduk}/update','KategoriProdukController@update');
 
+
 //member
 Route::get('/member','MemberController@index');
 Route::get('/member/{member}','MemberController@show');
 Route::get('/member/{member}/edit', 'MemberController@edit');
 Route::post('/member/{member}/update','MemberController@update');
 Route::get('/member/tambah/store','MemberController@create');
+Route::get('/data/tambah/store','MemberController@store');
 
 
 
@@ -124,3 +128,4 @@ Route::post('variant/tambah/store','variantController@store');
 Route::get('/variant/{variant}/edit','variantController@edit');
 Route::post('/variant/{variant}/update','variantController@update');
 Route::delete('/variant/{variant}','variantController@destroy');
+

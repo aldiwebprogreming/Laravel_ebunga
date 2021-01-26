@@ -8,11 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class RegisuserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function index()
     {
         $regisuser = Regisuser::all();
@@ -26,7 +22,7 @@ class RegisuserController extends Controller
      */
     public function create()
     {
-        //
+        return view('tambah.tambah_registrasi');
     }
 
     /**
@@ -37,7 +33,22 @@ class RegisuserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = DB::table('tbl_registrasi_user')->insert([
+
+            'kd_registrasi' => $request->kd_registrasi,
+            'token_registrasi'=>$request->token_registrasi,
+            'full_name'=>$request->full_name,
+            'phone_number'=>$request->phone_number,
+            'email'=>$request->email,
+            'password'=>$request->password,
+            'waktu_registrasi'=>$request->waktu_registrasi,
+            'referall_code'=>$request->referall_code,
+            'status_aktivasi'=>'disable',
+       
+
+        ]);
+
+        return redirect('/regisuser')->with('status','Data berhasil ditambahkan');
     }
 
     /**
