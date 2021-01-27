@@ -141,4 +141,5 @@ Route::get('/variant/cetak/pdf','variantController@cetak');
 //seller
 
 Route::get('/seller','SellerController@index');
+Route::get('/seller/cetak/pdf','SellerController@cetak');
 

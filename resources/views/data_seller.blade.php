@@ -35,7 +35,6 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                               <tr>
-                                <th>No</th>
                                 <th>Username</th>
                                 <th>Full Name</th>
                                 <th>Email</th>
@@ -51,8 +50,30 @@
                                 <th>Npwp</th>
                                 <th>Siup</th>
                                  <th>Status</th>
+                                  <th>Active</th>
                                 <th>Suspend</th>
-                            </tr>
+                              </tr>
+                          </thead>
+                          <tfoot>
+                              <tr>
+                                 <th>Username</th>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Country</th>
+                                <th>Provinsi</th>
+                                <th>Kabupten</th>
+                                <th>Kecamatan</th>
+                                <th>Kelurahan</th>
+                                <th>Alamat</th>
+                                <th>Postal Code</th>
+                                <th>Ktp</th>
+                                <th>Npwp</th>
+                                <th>Siup</th>
+                                 <th>Status</th>
+                                   <th>Active</th>
+                                <th>Suspend</th>
+                              </tr>
                           </tfoot>
                           <tbody>
 
@@ -61,7 +82,7 @@
                             ?>
                               @foreach($seller as $data)
                               <tr>
-                                  <td><?= $no++; ?></td>
+                                 <td><?= $no++; ?></td>
                                   <td><?= $data->username ?></td>
                                   <td><?= $data->full_name ?></td>
                                   <td><?= $data->email ?></td>
@@ -77,9 +98,10 @@
                                           <td><?= $data->npwp ?></td>
                                            <td><?= $data->siup ?></td>
                                             <td><?= $data->status ?></td>
+                                             <td><?= $data->active ?></td>
                                              <td><?= $data->suspend ?></td>
+
                                 
-                                   
                             </tr>
                             
                           @endforeach

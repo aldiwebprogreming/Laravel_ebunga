@@ -77,4 +77,16 @@ class SellerController extends Controller
     {
         //
     }
+
+     function cetak(){
+
+        $seller = seller::all();
+
+        $data['judul'] = "SELLER EBUNGA";
+        $data['footer'] = "Laporan data seller ebunga dicetak pada tanggal";
+        $pdf = PDF::loadview('cetak.cetak_seller',['seller'=>$seller],$data)->setpaper('LEGAL','landscape');
+        return $pdf->stream();
+}
+
+
 }
