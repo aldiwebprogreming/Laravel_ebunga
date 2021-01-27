@@ -26,6 +26,7 @@
 
                 <div class="card-body">
                 <a href="{{url('')}}/produk/tambah" class="btn btn-primary mb-3">Tambah Produk</a>
+                  <a href="{{url('produk/cetak/pdf')}}" class="btn btn-danger mb-3"><i class="fas fa-print"></i> Cetak PDF</a>
 
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -66,7 +67,7 @@
                                 <td>
                                     <!-- <a href="{{url('')}}/oprator/{{$data->id}}" class="btn btn-success"><i class="fas fa-eye"></i></a> -->
                                     <a href="{{url('')}}/produk/{{$data->id}}/edit" class="btn btn-primary"><i class="fas fa-pen"></i></a>
-                                     <a href="{{url('')}}/produk/{{$data->id}}" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                                     <a href="{{url('')}}/produk/{{$data->id}}" class="btn btn-success"><i class="fas fa-eye"></i></a>
 
                                     <form method="post" action="produk/{{$data->id}}">
                                         @method('delete')

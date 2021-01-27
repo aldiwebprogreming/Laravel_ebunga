@@ -282,11 +282,11 @@
 
            
 
-              <li class="menu-header">Order</li>
+              <li class="menu-header">Laporan</li>
               <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-table"></i><span>Laporan</span></a>
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-book"></i><span>Laporan</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="">Laporan Seller</a></li>
+                  <li><a class="nav-link" href="{{url('/seller')}}">Laporan Seller</a></li>
                    <li>  <a class="nav-link" href="">Laporan E-Cash</a></li> 
                 </ul>
               </li>

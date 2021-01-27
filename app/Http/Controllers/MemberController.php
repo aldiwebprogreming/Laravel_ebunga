@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Member;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class MemberController extends Controller
 {
@@ -141,6 +142,23 @@ class MemberController extends Controller
      */
     public function destroy(Member $member)
     {
-        //
+        
+        $id = $member['id'];
+        DB::table('tbl_member')->where('id',$id)->delete();
+        return redirect('/member')->with('status','Data berhsil dihapus');
     }
+
+
+    function cetak(){
+
+        $member = member::all();
+
+        $data['judul'] = "MEMBER";
+        $data['footer'] = "Laporan data member ebunga dicetak pada tanggal";
+        $pdf = PDF::loadview('cetak.cetak_member',['member'=>$member],$data)->setpaper('LEGAL','landscape');
+        return $pdf->stream();
+
+    }
+
+
 }

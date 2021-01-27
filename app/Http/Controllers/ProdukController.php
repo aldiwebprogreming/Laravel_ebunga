@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class ProdukController extends Controller
 {
@@ -168,4 +169,15 @@ class ProdukController extends Controller
         $produk->delete();
          return redirect('/produk')->with('status','Data berhasil dihapus');
     }
+
+     function cetak(){
+
+        $produk = produk::all();
+
+        $data['judul'] = "PRODUK";
+        $data['footer'] = "Laporan data produk ebunga dicetak pada tanggal";
+        $pdf = PDF::loadview('cetak.cetak_produk',['produk'=>$produk],$data)->setpaper('A4','landscape');
+        return $pdf->stream();
+}
+
 }

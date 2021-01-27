@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Kproduk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class KategoriProdukController extends Controller
 {
@@ -87,5 +88,15 @@ class KategoriProdukController extends Controller
         DB::table('tbl_kategori_produk')->where('id',$id)->delete();
 
         return redirect('/kategori')->with('status','Data berhasil dihapus');
+    }
+
+    function cetak(){
+
+        $kategori = kproduk::all();
+        $footer['footer'] = "Laporan data kategori produk";
+        $data['judul'] = "KATEGORI PRODUK";
+        $data['footer'] = "Laporan data kategori produk ebunga dicetak pada tanggal";
+        $pdf = PDF::loadview('cetak.cetak_kategori',['kategori'=>$kategori],$data)->setpaper('A4','landscape');
+        return $pdf->stream();
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Torder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class TorderController extends Controller
 {
@@ -132,4 +133,15 @@ class TorderController extends Controller
       DB::table('tbl_temp_order')->where('id',$id)->delete();
        return redirect('/torder')->with('status','Data berhasil dihapus');
     }
+
+    function cetak(){
+
+        $torder = torder::all();
+
+        $data['judul'] = "TEMP ORDER";
+        $data['footer'] = "Laporan data temp order ebunga dicetak pada tanggal";
+        $pdf = PDF::loadview('cetak.cetak_order',['order'=>$torder],$data)->setpaper('A4','landscape');
+        return $pdf->stream();
+}
+
 }

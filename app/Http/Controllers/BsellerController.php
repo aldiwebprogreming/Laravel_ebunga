@@ -64,7 +64,37 @@ class BsellerController extends Controller
      */
     public function show(Bseller $bseller)
     {
-        return view('detail_branch_seller',['bseller'=>$bseller]);
+
+        
+        $alamat = $bseller['alamat'];
+
+         $id_kel = substr($alamat, 0, 10);
+         $id_kec = substr($alamat,11,6);
+         $id_kab = substr($alamat,11,4);
+         $id_prov = substr($alamat,23,2);
+
+        
+
+         $kel =DB::table('tbl_kelurahan')->where('id_kel',$id_kel)->get();
+         foreach ($kel as $id_kel) {
+         }
+             $kec =DB::table('tbl_kecamatan')->where('id_kec',$id_kec)->get();
+         foreach ($kec as $id_kec) {
+         }
+
+            $kab =DB::table('tbl_kabupaten')->where('id_kab',$id_kab)->get();
+         foreach ($kab as $id_kab) {
+         }
+          $prov =DB::table('tbl_provinsi')->where('id_prov',$id_prov)->get();
+         foreach ($prov as $id_prov) {
+         }
+            $kelurahan =  $id_kel->nama;
+            $kecamatan =  $id_kec->nama;
+            $kabupaten = $id_kab->nama;
+            $provinsi  = $id_prov->nama;
+
+        return view('detail_branch_seller',['bseller'=>$bseller,'kel'=>$kelurahan,'kec'=>$kecamatan,'kab'=>$kabupaten,'prov'=>$provinsi]);
+
     }
 
     /**
@@ -166,12 +196,10 @@ class BsellerController extends Controller
     function cetak_pdf(){
 
         $bseller = Bseller::all();
-        $pdf = PDF::loadview('cetak_bseller',['bseller'=>$bseller]);
 
-       $data = json_encode($bseller);
-        
-      echo $data->alamat;
-        
+        $pdf = PDF::loadview('cetak.cetak_bseller',['bseller'=>$bseller])->setpaper('A4','landscape');
+
+        return $pdf->stream();
 }
 
 }

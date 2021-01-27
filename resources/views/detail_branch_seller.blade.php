@@ -1,3 +1,4 @@
+
 @extends('layout.app')
 
 @section('title','Detail Branch Seller')
@@ -39,6 +40,20 @@
                              <p>{{$bseller->id_seller}}</p>
                             </div>
                             <hr>
+
+                          <!--   <?php 
+
+                             ?> -->
+
+
+                            <div class="mb-3">
+                              <label for="" class="form-label"><strong>Alamat</strong></label>
+                             <p>{{$kel}} - {{$kec}} - {{$kab}} - {{$prov}}</p>
+                            </div>
+                            <hr>
+
+
+
 
                              <div class="mb-3">
                               <label for="" class="form-label"><strong>Phone</strong></label>

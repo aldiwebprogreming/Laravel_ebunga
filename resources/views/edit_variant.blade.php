@@ -55,7 +55,7 @@
                             </div>
 
                              <div class="mb-3">
-                              <label for="" class="form-label">Deks Variant</label>
+                              <label for="" class="form-label">Active</label>
                               <select class="form-control" name="active">
                                <?php if ($variant->active == 1) {
                                  echo "<option value='1'>Y</option>";

@@ -27,6 +27,8 @@
                 <div class="card-body">
             	<a href="{{url('tambah/torder')}}" class="btn btn-primary mb-3">Tambah Data Temp Order</a>
 
+                <a href="{{url('torder/cetak/pdf')}}" class="btn btn-danger mb-3"><i class="fas fa-print"></i> Cetak PDF</a>
+
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>

@@ -26,6 +26,7 @@
 
                 <div class="card-body">
             	<a href="{{url('')}}/kategori/tambah" class="btn btn-primary mb-3">Tambah Kategori Produk</a>
+                <a href="{{url('')}}/kategori/cetak" class="btn btn-danger mb-3"><i class="fas fa-print"></i> Cetak PDF</a>
 
                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

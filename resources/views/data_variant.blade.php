@@ -27,6 +27,8 @@
                 <div class="card-body">
                 <a href="{{url('')}}/variant/tambah" class="btn btn-primary mb-3">Tambah Variant</a>
 
+                <a href="{{url('variant/cetak/pdf')}}" class="btn btn-danger mb-3"><i class="fas fa-print"></i> Cetak PDF</a>
+
                  
 
                 <div class="table-responsive">

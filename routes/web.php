@@ -46,6 +46,7 @@ Route::get('/regisuser/{regisuser}/edit','RegisuserController@edit');
 Route::post('/regisuser/{regisuser}/update','RegisuserController@update');
 Route::get('/tambah/regitrasi','RegisuserController@create');
 Route::post('/registrasi/tambah/store','RegisuserController@store');
+Route::get('/registrasimember/cetak/pdf','RegisuserController@cetak');
 
 
 
@@ -76,6 +77,8 @@ Route::get('/produk/{produk}/edit','ProdukController@edit');
 Route::post('/produk/{produk}/update','ProdukController@update');
 Route::get('/produk/{produk}','ProdukController@show');
 Route::delete('/produk/{produk}','ProdukController@destroy');
+Route::get('/produk/cetak/pdf','ProdukController@cetak');
+
 
 //kategori produk
 
@@ -86,6 +89,7 @@ Route::get('/kategori/{kproduk}/edit','KategoriProdukController@edit');
 Route::post('/kategori/tambah/store','KategoriProdukController@store');
 Route::delete('/kategori/{kproduk}','KategoriProdukController@destroy');
 Route::post('/kategori/{kproduk}/update','KategoriProdukController@update');
+Route::get('kategori/cetak','KategoriProdukController@cetak');
 
 
 //member
@@ -95,6 +99,8 @@ Route::get('/member/{member}/edit', 'MemberController@edit');
 Route::post('/member/{member}/update','MemberController@update');
 Route::get('/member/tambah/store','MemberController@create');
 Route::get('/data/tambah/store','MemberController@store');
+Route::delete('/member/{member}','MemberController@destroy');
+Route::get('/member/cetak/pdf','MemberController@cetak');
 
 
 
@@ -106,7 +112,8 @@ Route::get('/torder/{torder}/edit','TorderController@edit');
 Route::post('/torder/{torder}/update','TorderController@update');
 Route::delete('/torder/{torder}','TorderController@destroy');
 Route::get('/torder/{torder}','TorderController@show');
-Route::post('//torder/store','TorderController@store');
+Route::post('/torder/store','TorderController@store');
+Route::get('/torder/cetak/pdf','TorderController@cetak');
 
 
 //branch_seller
@@ -129,4 +136,9 @@ Route::post('variant/tambah/store','variantController@store');
 Route::get('/variant/{variant}/edit','variantController@edit');
 Route::post('/variant/{variant}/update','variantController@update');
 Route::delete('/variant/{variant}','variantController@destroy');
+Route::get('/variant/cetak/pdf','variantController@cetak');
+
+//seller
+
+Route::get('/seller','SellerController@index');
 

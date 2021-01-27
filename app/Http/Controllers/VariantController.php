@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Variant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class VariantController extends Controller
 {
@@ -112,4 +113,15 @@ class VariantController extends Controller
         DB::table('tbl_variant')->where('id',$id)->delete();
         return redirect('/variant')->with('status','Data berhasil dihapus');
     }
+
+     function cetak(){
+
+        $variant = variant::all();
+
+        $data['judul'] = "VARIANT PRODUK";
+        $data['footer'] = "Laporan data variant produk ebunga dicetak pada tanggal";
+        $pdf = PDF::loadview('cetak.cetak_variant',['variant'=>$variant],$data)->setpaper('A4','landscape');
+        return $pdf->stream();
+}
+
 }
